@@ -3,22 +3,3 @@
   $font: unquote($font);
   @import url(https://fonts.googleapis.com/css?family=#{$font}:#{$types}});
 }
-
-@mixin text-noselect(){
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently */
-}
-
-
-@mixin transitionCustom($stuff){
-  -webkit-transition: $stuff;
-  -o-transition: $stuff;
-  -moz-transition: $stuff;
-  -ms-transition: $stuff;
-  -kthtml-transition: $stuff;
-  transition: $stuff;
-}
