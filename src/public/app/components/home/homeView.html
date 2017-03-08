@@ -9,10 +9,11 @@
         <div class="juice">
             <div class="content" id="juice-content"></div>
             <div class="control-time" ng-if="status == 'paused'">
-                <img src="/dist/img/play.svg" ng-click="playPomodoro()">
+                <img src="/dist/img/play.svg" class="img-play" ng-click="playPomodoro()">
             </div>
             <div class="control-time pause" ng-if="status == 'running'">
-                <img src="/dist/img/pause.svg" ng-click="pausePomodoro()">
+                <img src="/dist/img/pause.svg" class="img-pause" ng-click="pausePomodoro()">
+                <img src="/dist/img/reset.svg" class="img-reset" ng-click="resetTime()">
             </div>
         </div>
 

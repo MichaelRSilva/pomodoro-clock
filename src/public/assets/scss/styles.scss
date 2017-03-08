@@ -73,12 +73,23 @@ section.pomodoro{
         z-index: 500;
         position: absolute;
         bottom: 0;
-        line-height: 325px;
-        text-align: center;
+
+        .img-reset{
+          margin-top: 0;
+        }
+
+        .img-pause{
+          margin-top: -80px;
+        }
 
         img{
           width: 66px;
           height: 66px;
+          position: absolute;
+          top: 50%;
+          margin-top: -53px;
+          left: 50%;
+          margin-left: -33px;
         }
       }
 

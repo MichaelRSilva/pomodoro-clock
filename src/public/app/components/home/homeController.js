@@ -28,11 +28,15 @@ function homeController($scope, $interval) {
      * @param local: Can be break or session
      */
     $scope.upTime = function (local) {
-        $scope[local+"Time"]        = twoDigits(parseInt($scope[local+"Time"]) + 1);
 
-        if(local == "session"){
-            $scope.currentTime          = $scope.currentTime.add(1, 'minute');
-            $scope.currentTimeToShow    = $scope.currentTime.format("mm:ss");
+        if($scope.status != "running"){
+            $scope[local+"Time"]        = twoDigits(parseInt($scope[local+"Time"]) + 1);
+
+            if(local == "session"){
+                $scope.currentTime          = $scope.currentTime.add(1, 'minute');
+            }
+
+            $scope.resetTime();
         }
     };
 
@@ -41,13 +45,17 @@ function homeController($scope, $interval) {
      * @param local: Can be break or session
      */
     $scope.downTime = function (local) {
-        $scope[local+"Time"]        = twoDigits(parseInt($scope[local+"Time"]) - 1);
 
-        if(local == "session"){
-            $scope.currentTime          = $scope.currentTime.subtract(1, 'minute');
-            $scope.currentTimeToShow    = $scope.currentTime.format("mm:ss");
+        if($scope.status != "running") {
+
+            $scope[local + "Time"] = twoDigits(parseInt($scope[local + "Time"]) - 1);
+
+            if (local == "session") {
+                $scope.currentTime = $scope.currentTime.subtract(1, 'minute');
+            }
+
+            $scope.resetTime();
         }
-
     };
 
 
@@ -154,6 +162,18 @@ function homeController($scope, $interval) {
         var quantity               = ($scope.cupContentPercent * $scope.juiceWhole)/100;
         angular.element(document.getElementById('juice-content')).css("height", quantity + "px");
 
+    };
+
+
+    /**
+     * Reset the session time and break time for default value.
+     */
+    $scope.resetTime = function () {
+        $scope.currentTime          = moment($scope.dateBase, "DD/MM/YYYY HH:mm:ss").add($scope.sessionTime, 'minutes');
+        $scope.currentTimeToShow    = $scope.currentTime.format("mm:ss");
+        $scope.status               = "session";
+
+        $scope.pausePomodoro();
     };
 
 
