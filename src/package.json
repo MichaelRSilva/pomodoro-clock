@@ -1,0 +1,40 @@
+{
+  "name": "CalculatorMS",
+  "version": "1.0.0",
+  "description": "CalculatorMS - FreeCodeCamp's Front-End Project",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelRSilva/calculatorMS.git"
+  },
+  "keywords": [
+    "free-code-camp calculator",
+    "free code camp calculator"
+  ],
+  "author": "Michael Silva",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-uglify": "^2.0.1",
+    "gulp-zip": "^4.0.0",
+    "imagemin-jpeg-recompress": "^5.1.0",
+    "imagemin-pngquant": "^5.0.0",
+    "static-server": "^2.0.3"
+  },
+  "dependencies": {
+    "static-server": "^2.0.4"
+  }
+}

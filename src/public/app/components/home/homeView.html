@@ -1,0 +1,52 @@
+
+<section class="calculator" id="calculator">
+
+    <div class="calculator-init" ng-draggable="dragOptions">
+
+        <div class="frame-display">
+
+            <img src="dist/img/backspace.svg" ng-dblclick="clearAll();" ng-click="clearCurrent();" class="backspace" title="Backspace" alt="Backspace">
+
+            <div class="real-display">
+                <input type="text" class="history-digits" ng-hide="showError" readonly ng-model="historyDisplay">
+                <input type="text" class="current-digits" ng-hide="showError" readonly ng-model="currentDisplay">
+                <div class="error-display" ng-show="showError">{{msgErrorDisplay}}</div>
+            </div>
+        </div>
+
+        <ul class="frame-top-operators">
+            <li ng-click="keyClick('÷');">÷</li>
+            <li ng-click="keyClick('×');">×</li>
+            <li ng-click="keyClick('-');">-</li>
+            <li ng-click="keyClick('+');">+</li>
+        </ul>
+
+        <ul class="digits-commom-line">
+            <li ng-click="keyClick(7);">7</li>
+            <li ng-click="keyClick(8);">8</li>
+            <li ng-click="keyClick(9);">9</li>
+            <li ng-click="keyClick('(');">(</li>
+        </ul>
+        <ul class="digits-commom-line">
+            <li ng-click="keyClick(4);">4</li>
+            <li ng-click="keyClick(5);">5</li>
+            <li ng-click="keyClick(6);">6</li>
+            <li ng-click="keyClick(')');">)</li>
+        </ul>
+
+        <ul class="digits-small-line">
+            <li ng-click="keyClick(3);">3</li>
+            <li ng-click="keyClick(2);">2</li>
+            <li ng-click="keyClick(1);">1</li>
+        </ul>
+
+        <ul class="digits-small-line last-line">
+            <li class="double-x" ng-click="keyClick(0);">0</li>
+            <li ng-click="keyClick('.');">.</li>
+        </ul>
+
+        <div class="operator-equal" ng-click="executeCurrentOperation()">=</div>
+
+    </div>
+
+</section>
