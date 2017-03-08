@@ -1,19 +1,24 @@
 
 <section class="pomodoro" id="pomodoro">
 
-    <img src="/dist/img/sound-on.svg" class="sound-control">
+    <img src="/dist/img/sound-on.svg" ng-show="sound" class="sound-control" ng-click="turnOffSound()">
+    <img src="/dist/img/sound-off.svg" ng-hide="sound" class="sound-control" ng-click="turnOnSound()">
 
     <div class="frame-pomodoro-clock">
 
         <div class="juice">
-            <div class="content"></div>
-            <div class="control-time">
-                <img src="/dist/img/play.svg">
+            <div class="content" id="juice-content"></div>
+            <div class="control-time" ng-if="status == 'paused'">
+                <img src="/dist/img/play.svg" ng-click="playPomodoro()">
+            </div>
+            <div class="control-time pause" ng-if="status == 'running'">
+                <img src="/dist/img/pause.svg" ng-click="pausePomodoro()">
             </div>
         </div>
 
         <div class="tomato">
-            <div class="time">24:59</div>
+            <div class="show-local">{{running}}</div>
+            <div class="time">{{currentTimeToShow}}</div>
         </div>
     </div>
 
@@ -23,10 +28,10 @@
                 session
             </div>
             <div class="up-down">
-                <img src="/dist/img/sort-up.svg">
-                <img src="/dist/img/sort-down.svg">
+                <img src="/dist/img/sort-up.svg" ng-click="upTime('session')">
+                <img src="/dist/img/sort-down.svg" ng-click="downTime('session')">
             </div>
-            25
+            {{sessionTime}}
         </div>
 
         <div class="break">
@@ -34,10 +39,10 @@
                 break
             </div>
             <div class="up-down">
-                <img src="/dist/img/sort-up.svg">
-                <img src="/dist/img/sort-down.svg">
+                <img src="/dist/img/sort-up.svg" ng-click="upTime('break')">
+                <img src="/dist/img/sort-down.svg" ng-click="downTime('break')">
             </div>
-            05
+            {{breakTime}}
         </div>
     </div>
 

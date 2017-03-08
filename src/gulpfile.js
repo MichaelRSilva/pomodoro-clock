@@ -49,6 +49,7 @@ gulp.task("scripts", function(){
     return gulp.src([
         'bower_components/angular/angular.min.js',
         'bower_components/angular-route/angular-route.min.js',
+        'bower_components/moment/min/moment.min.js',
         SCRIPTS_PATH])
         .pipe(plumber(function (err) {
             console.log("Scripts task Error");
