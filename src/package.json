@@ -1,7 +1,7 @@
 {
-  "name": "CalculatorMS",
+  "name": "Pomodoro Clock",
   "version": "1.0.0",
-  "description": "CalculatorMS - FreeCodeCamp's Front-End Project",
+  "description": "Pomodoro Clock - FreeCodeCamp's Front-End Project",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

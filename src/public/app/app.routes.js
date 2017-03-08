@@ -3,7 +3,7 @@
  */
 
 angular
-    .module('calculatorMS')
+    .module('pomodoroClock')
     .config(config);
 
 function config($routeProvider, $sceDelegateProvider) {

@@ -1,6 +1,6 @@
 {
-  "name": "calculatorMS",
-  "description": "CalculatorMS - FreeCodeCamp's Front-End Project",
+  "name": "Pomodoro Clock",
+  "description": "Pomodoro Clock - FreeCodeCamp's Front-End Project",
   "main": "gulpfile.js",
   "authors": [
     "Michael Silva"
