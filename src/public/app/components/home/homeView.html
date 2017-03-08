@@ -1,19 +1,19 @@
 
 <section class="pomodoro" id="pomodoro">
 
-    <img src="/dist/img/sound-on.svg" ng-show="sound" class="sound-control" ng-click="turnOffSound()">
-    <img src="/dist/img/sound-off.svg" ng-hide="sound" class="sound-control" ng-click="turnOnSound()">
+    <img src="/dist/img/sound-on.svg" alt="Turn on sound" ng-show="sound" class="sound-control" ng-click="turnOffSound()">
+    <img src="/dist/img/sound-off.svg" alt="Turn off sound" ng-hide="sound" class="sound-control" ng-click="turnOnSound()">
 
     <div class="frame-pomodoro-clock">
 
         <div class="juice">
             <div class="content" id="juice-content"></div>
             <div class="control-time" ng-if="status == 'paused'">
-                <img src="/dist/img/play.svg" class="img-play" ng-click="playPomodoro()">
+                <img src="/dist/img/play.svg" alt="Start Pomodoro" title="Start Pomodoro" class="img-play" ng-click="playPomodoro()">
             </div>
             <div class="control-time pause" ng-if="status == 'running'">
-                <img src="/dist/img/pause.svg" class="img-pause" ng-click="pausePomodoro()">
-                <img src="/dist/img/reset.svg" class="img-reset" ng-click="resetTime()">
+                <img src="/dist/img/pause.svg" title="Pause Pomodoro" title="Pause Pomodoro" class="img-pause" ng-click="pausePomodoro()">
+                <img src="/dist/img/reset.svg" title="Reset Pomodoro" alt="Reset Pomodoro" class="img-reset" ng-click="resetTime()">
             </div>
         </div>
 
@@ -29,8 +29,8 @@
                 session
             </div>
             <div class="up-down">
-                <img src="/dist/img/sort-up.svg" ng-click="upTime('session')">
-                <img src="/dist/img/sort-down.svg" ng-click="downTime('session')">
+                <img src="/dist/img/sort-up.svg" alt="Increase session time" ng-click="upTime('session')">
+                <img src="/dist/img/sort-down.svg" alt="Decrease sessio ntime" ng-click="downTime('session')">
             </div>
             {{sessionTime}}
         </div>
@@ -40,8 +40,8 @@
                 break
             </div>
             <div class="up-down">
-                <img src="/dist/img/sort-up.svg" ng-click="upTime('break')">
-                <img src="/dist/img/sort-down.svg" ng-click="downTime('break')">
+                <img src="/dist/img/sort-up.svg" alt="Increase break time" ng-click="upTime('break')">
+                <img src="/dist/img/sort-down.svg" alt="Decrease break time" ng-click="downTime('break')">
             </div>
             {{breakTime}}
         </div>

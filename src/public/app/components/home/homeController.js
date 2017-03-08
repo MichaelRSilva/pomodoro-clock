@@ -10,9 +10,9 @@ homeController.$inject = ['$scope', '$interval'];
 
 function homeController($scope, $interval) {
 
-    $scope.sessionTime          = twoDigits(1);
+    $scope.sessionTime          = twoDigits(25);
     $scope.dateBase             = "01/01/1970 00:00:00";
-    $scope.breakTime            = twoDigits(1);
+    $scope.breakTime            = twoDigits(5);
     $scope.juiceWhole           = 282;
     $scope.currentTime          = moment($scope.dateBase, "DD/MM/YYYY HH:mm:ss").add($scope.sessionTime, 'minutes');
     $scope.currentTimeToShow    = $scope.currentTime.format("mm:ss");
@@ -63,7 +63,7 @@ function homeController($scope, $interval) {
      * Turn off the alert sound, then when to end the session, it will not transmit sound
      */
     $scope.turnOffSound = function () {
-      $scope.sound = false;
+        $scope.sound = false;
     };
 
     /**
@@ -125,6 +125,10 @@ function homeController($scope, $interval) {
             $scope.currentTime          = moment($scope.dateBase, "DD/MM/YYYY HH:mm:ss").add($scope.sessionTime, 'minutes');
             $scope.currentTimeToShow    = $scope.currentTime.format("mm:ss");
 
+            if($scope.sound){
+                $scope.playAudioStartBreak();
+            }
+
             $scope.running = 'break';
 
         }else{
@@ -133,6 +137,10 @@ function homeController($scope, $interval) {
             if($scope.cupContentPercent >= 100){
                 $scope.currentTime          = moment($scope.dateBase, "DD/MM/YYYY HH:mm:ss").add($scope.breakTime, 'minutes');
                 $scope.currentTimeToShow    = $scope.currentTime.format("mm:ss");
+
+                if($scope.sound){
+                    $scope.playAudioStartSession();
+                }
 
                 $scope.running = 'session';
             }
@@ -174,6 +182,23 @@ function homeController($scope, $interval) {
         $scope.status               = "session";
 
         $scope.pausePomodoro();
+    };
+
+
+    /**
+     * Play a audio when start a new session
+     */
+    $scope.playAudioStartSession = function() {
+        var audio = new Audio('https://dl.dropboxusercontent.com/s/hbl00a2no1eqd64/start_session.mp3');
+        audio.play();
+    };
+
+    /**
+     * Play a audio when start a new break
+     */
+    $scope.playAudioStartBreak = function() {
+        var audio = new Audio('https://dl.dropboxusercontent.com/s/bjq9rx7iz4tuxp6/start_break.mp3');
+        audio.play();
     };
 
 
